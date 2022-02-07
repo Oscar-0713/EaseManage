@@ -1,0 +1,9 @@
+main: me.oscar0713.ping.Main
+name: ping
+version: 1.0.0
+author: Oscar0713
+commands:
+  ping:
+  announce:
+  reload:
+  
