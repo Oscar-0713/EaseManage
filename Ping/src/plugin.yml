@@ -1,10 +1,12 @@
 main: me.oscar0713.ping.Main
-name: ping
-version: 1.0.0
+name: EaseManage
+version: 0.0.3
 author: Oscar0713
+api-version: 1.13
 commands:
   ping:
   announce:
   reload:
   tps:
+  head:
   

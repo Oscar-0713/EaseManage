@@ -8,6 +8,7 @@ public class Main extends JavaPlugin{
 	public void onEnable() {
 		Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new TickCalculation(), 100L, 1L);
 		this.getCommand("ping").setExecutor(new Ping(this));
+		this.getCommand("head").setExecutor(new Playerhead());
 		Reload reload = new Reload();
 		this.getServer().getPluginManager().registerEvents(reload, this);
 		this.getServer().getPluginManager().registerEvents(new TPS(),this);

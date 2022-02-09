@@ -15,10 +15,10 @@ public class TPS implements Listener{
 		if (cmd.equalsIgnoreCase("tps")) {
 			event.setCancelled(true);
 			Player player = event.getPlayer();
-			if (!player.hasPermission("tps.use")) {
-				player.sendMessage(ChatColor.RED + "You do not have permission to use this command!");
-				return;
-			}
+//			if (!player.hasPermission("tps.use")) {
+//				player.sendMessage(ChatColor.RED + "You do not have permission to use this command!");
+//				return;
+//			}
 			player.sendMessage(ChatColor.GOLD + "Current server TPS: " + ChatColor.GREEN + TickCalculation.getTPS());
 			return;
 		}
