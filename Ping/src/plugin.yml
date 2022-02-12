@@ -1,6 +1,6 @@
 main: me.oscar0713.ping.Main
 name: EaseManage
-version: 0.0.3
+version: 0.0.4
 author: Oscar0713
 api-version: 1.13
 commands:
@@ -9,4 +9,5 @@ commands:
   reload:
   tps:
   head:
+  spawn:
   
