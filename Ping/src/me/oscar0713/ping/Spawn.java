@@ -17,7 +17,7 @@ public class Spawn implements CommandExecutor{
 		cooldowns = new Cooldown<String>();
 	}
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if (label == "spawn") {
+		if (label.equalsIgnoreCase("spawn") ) {
 			if (!(sender instanceof Player)) {
 				sender.sendMessage(ChatColor.RED + "You are not allowed to use this command");
 				return true;
