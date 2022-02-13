@@ -1,0 +1,6 @@
+command-enable:
+  serverstatus: true
+  head: true
+  spawn: false
+  announcement: true
+  stat: true

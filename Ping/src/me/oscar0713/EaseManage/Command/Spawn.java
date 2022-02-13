@@ -6,6 +6,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import me.oscar0713.EaseManage.Utilities.Configuration;
 import me.oscar0713.EaseManage.Utilities.Cooldown;
 import net.md_5.bungee.api.ChatColor;
 
@@ -19,6 +20,10 @@ public class Spawn implements CommandExecutor{
 	}
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (label.equalsIgnoreCase("spawn") ) {
+			if (!Configuration.getCommandEnable("spawn")) {
+				sender.sendMessage(ChatColor.RED + "This command is currently disabled!");
+				return false;
+			}
 			if (!(sender instanceof Player)) {
 				sender.sendMessage(ChatColor.RED + "You are not allowed to use this command");
 				return true;
