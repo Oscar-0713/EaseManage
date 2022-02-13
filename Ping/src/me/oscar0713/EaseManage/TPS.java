@@ -1,4 +1,4 @@
-package me.oscar0713.ping;
+package me.oscar0713.EaseManage;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

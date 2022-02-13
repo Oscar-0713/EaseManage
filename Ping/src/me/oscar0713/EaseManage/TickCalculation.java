@@ -1,4 +1,4 @@
-package me.oscar0713.ping;
+package me.oscar0713.EaseManage;
 
 public class TickCalculation implements Runnable{
 	public static int TICK_COUNT= 0;

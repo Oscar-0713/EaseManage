@@ -1,4 +1,4 @@
-package me.oscar0713.ping;
+package me.oscar0713.EaseManage;
 
 import java.util.HashMap;
 import java.util.Map;

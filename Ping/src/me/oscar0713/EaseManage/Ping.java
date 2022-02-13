@@ -1,4 +1,4 @@
-package me.oscar0713.ping;
+package me.oscar0713.EaseManage;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

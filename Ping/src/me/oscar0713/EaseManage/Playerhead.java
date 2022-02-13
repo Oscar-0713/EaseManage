@@ -1,4 +1,4 @@
-package me.oscar0713.ping;
+package me.oscar0713.EaseManage;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
