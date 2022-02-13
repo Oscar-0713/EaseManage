@@ -8,10 +8,11 @@ Required 1.13 or above
 
 ### Features
 The plugin includes the following:
-- Check Server Status (Ping / TPS) [Completed]
-- Get Player Head [Completed]
-- Player statistics check with GUI [Completed]
-- /spawn with cooldown settings [Completed]
+- **Check Server Status (Ping / TPS) [Completed]**
+- **Get Player Head [Completed]**
+- **Player statistics check with GUI [Completed]**
+- **/spawn with cooldown settings [Completed]**
+- **AutoMessage [Completed]**
 - Custom relaod / restart announcement
 - Announcement system
 - Display name change
