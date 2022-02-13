@@ -10,4 +10,8 @@ public class Utilities {
 		 d.setRoundingMode(RoundingMode.HALF_UP);
 		 return d.format(num);
 	}
+	
+	public static int abs(int num) {
+		return (num < 0 ? -num : num);
+	}
 }

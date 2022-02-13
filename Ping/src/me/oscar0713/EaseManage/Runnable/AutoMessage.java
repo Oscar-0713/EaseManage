@@ -7,6 +7,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 
 import me.oscar0713.EaseManage.Utilities.Configuration;
+import me.oscar0713.EaseManage.Utilities.Utilities;
 
 public class AutoMessage implements Runnable{
 	private List<String> msgs;
@@ -25,7 +26,7 @@ public class AutoMessage implements Runnable{
 //		}
 		int index = 0;
 		if (msgs.size() >1) {
-			index = r.nextInt() % (msgs.size());
+			index =  Utilities.abs(r.nextInt() % (msgs.size()));
 		}
 		Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&',msgs.get(index)));
 	}
