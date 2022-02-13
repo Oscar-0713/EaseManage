@@ -8,6 +8,7 @@ import me.oscar0713.EaseManage.Command.Reload;
 import me.oscar0713.EaseManage.Command.ServerStatus;
 import me.oscar0713.EaseManage.Command.Spawn;
 import me.oscar0713.EaseManage.Command.Stat;
+import me.oscar0713.EaseManage.Runnable.AutoMessage;
 import me.oscar0713.EaseManage.TabCompleter.ServerStatusCompleter;
 import me.oscar0713.EaseManage.Utilities.Configuration;
 import me.oscar0713.EaseManage.Utilities.TickCalculation;
@@ -28,7 +29,9 @@ public class Main extends JavaPlugin{
 		
 		//Register Runnable event to the server
 		Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new TickCalculation(), 100L, 1L);
-		
+		if (Configuration.getAutoMessageEnable()) {
+			Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new AutoMessage(), 60*20, Configuration.getAutoMessageInterval()*20);			
+		}
 		//Deprecated command
 		//this.getCommand("ping").setExecutor(new Ping(this));
 		
@@ -38,12 +41,15 @@ public class Main extends JavaPlugin{
 		this.getCommand("serverstatus").setExecutor(new ServerStatus());
 		this.getCommand("serverstatus").setTabCompleter(new ServerStatusCompleter());
 		this.getCommand("stat").setExecutor(stat);
+		
 		//Event registration
 		Reload reload = new Reload();
 		this.getServer().getPluginManager().registerEvents(reload, this);
 		this.getServer().getPluginManager().registerEvents(stat, this);
+		
 		//Deprecated method
 		//this.getServer().getPluginManager().registerEvents(new TPS(),this);
+		
 	}
 	
 	@Override

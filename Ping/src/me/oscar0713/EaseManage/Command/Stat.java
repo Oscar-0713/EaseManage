@@ -23,6 +23,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
 import me.oscar0713.EaseManage.Utilities.Configuration;
+import me.oscar0713.EaseManage.Utilities.Utilities;
 import net.md_5.bungee.api.ChatColor;
 
 public class Stat implements CommandExecutor, Listener {
@@ -95,6 +96,16 @@ public class Stat implements CommandExecutor, Listener {
 		item.setItemMeta(meta);
 		inv.setItem(30, item);
 		
+		//Set time in the server
+		item.setType(Material.CLOCK);
+		meta = item.getItemMeta();
+		meta.setDisplayName(ChatColor.GOLD + "Online Time");
+		lore.clear();
+		lore.add("");
+		lore.add(ChatColor.GRAY + "" + ChatColor.ITALIC + "The time that you played.");
+		item.setItemMeta(meta);
+		inv.setItem(31, item);
+		
 		//Set closed
 		ItemStack item_close = new ItemStack(Material.BARRIER);
 		ItemMeta meta_close = item_close.getItemMeta();
@@ -141,6 +152,16 @@ public class Stat implements CommandExecutor, Listener {
 		item.setItemMeta(meta);
 		inv_player.setItem(30, item);
 		
+		//Update playing time
+		item = inv_player.getItem(31);
+		meta = item.getItemMeta();
+		List<String> lore = meta.getLore();
+		double ticks = player.getStatistic(Statistic.PLAY_ONE_MINUTE);
+		ticks = ticks /20 / 60 / 60;
+		lore.add(ChatColor.AQUA + "Current count: " + Utilities.getRoundOneDecimal(ticks) + " hours");
+		meta.setLore(lore);
+		item.setItemMeta(meta);
+		inv_player.setItem(31, item);
 		invs.put(player.getName(), inv_player);
 	}
 	

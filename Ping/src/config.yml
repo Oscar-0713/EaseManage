@@ -1,6 +1,15 @@
 command-enable:
   serverstatus: true
   head: true
-  spawn: false
+  spawn: true
   announcement: true
   stat: true
+  
+features:
+  auto-message:
+    enable: true
+    interval: 180
+    msgs:
+      - "&bTIPS: Use /spawn can back to your spawnpoint"
+      - "&bTIPS: Use /stat can see your own statistics"
+      - "&bTIPS: Use /serverstatus can check the current status of the server"
