@@ -1,4 +1,4 @@
-package me.oscar0713.EaseManage;
+package me.oscar0713.EaseManage.Command;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -23,7 +23,7 @@ public class Playerhead implements CommandExecutor{
 				return false;
 			}
 			Player player = (Player) sender;
-			if (!player.hasPermission("head.use")) {
+			if (!player.hasPermission("easemanage.head.use")) {
 				player.sendMessage(ChatColor.RED + "You do not have permission to use this command");
 				return false;
 			}

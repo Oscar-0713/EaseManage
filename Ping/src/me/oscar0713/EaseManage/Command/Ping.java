@@ -1,12 +1,15 @@
-package me.oscar0713.EaseManage;
+package me.oscar0713.EaseManage.Command;
 
 import org.bukkit.command.Command;
+
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import me.oscar0713.EaseManage.Main;
 import net.md_5.bungee.api.ChatColor;
 
+@Deprecated
 public class Ping implements CommandExecutor{
 	
 	public static Main plugin;
@@ -23,6 +26,10 @@ public class Ping implements CommandExecutor{
 				return true;
 			}
 			Player player = (Player) sender;
+			if (!player.hasPermission("easemanage.ping.use")) {
+				player.sendMessage(ChatColor.RED + "You do not have permission to use this command!");
+				return true;
+			}
 			player.sendMessage(ChatColor.GOLD + "Your ping is " + ChatColor.GREEN + "" + player.getPing() + ChatColor.GOLD + " ms");
 			return true;
 			

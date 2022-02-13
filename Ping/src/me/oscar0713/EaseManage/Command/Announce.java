@@ -1,4 +1,4 @@
-package me.oscar0713.EaseManage;
+package me.oscar0713.EaseManage.Command;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

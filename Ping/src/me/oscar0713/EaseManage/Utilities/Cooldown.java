@@ -1,4 +1,4 @@
-package me.oscar0713.EaseManage;
+package me.oscar0713.EaseManage.Utilities;
 
 import java.util.HashMap;
 import java.util.Map;

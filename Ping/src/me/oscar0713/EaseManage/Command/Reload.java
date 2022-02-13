@@ -1,4 +1,4 @@
-package me.oscar0713.EaseManage;
+package me.oscar0713.EaseManage.Command;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -15,7 +15,7 @@ public class Reload implements Listener{
 		if (cmd.equalsIgnoreCase("reload")) {
 			event.setCancelled(true);
 			Player player = event.getPlayer();
-			if (!player.hasPermission("reload.use")) {
+			if (!player.hasPermission("easemanage.reload.use")) {
 				player.sendMessage(ChatColor.RED + "You do not have permission to issue this command. If you think this is an error, please contact server administrator");
 				return;
 			}
