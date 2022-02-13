@@ -25,7 +25,7 @@ public class AutoMessage implements Runnable{
 //		}
 		int index = 0;
 		if (msgs.size() >1) {
-			index = r.nextInt() % (msgs.size() -1);
+			index = r.nextInt() % (msgs.size());
 		}
 		Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&',msgs.get(index)));
 	}
