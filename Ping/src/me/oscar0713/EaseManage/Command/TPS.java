@@ -5,7 +5,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
-import me.oscar0713.EaseManage.Utilities.TickCalculation;
+import me.oscar0713.EaseManage.Runnable.TickCalculation;
 import net.md_5.bungee.api.ChatColor;
 
 @Deprecated

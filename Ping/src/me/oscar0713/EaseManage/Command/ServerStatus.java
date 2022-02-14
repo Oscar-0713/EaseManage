@@ -5,8 +5,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import me.oscar0713.EaseManage.Runnable.TickCalculation;
 import me.oscar0713.EaseManage.Utilities.StatusCodeInterpreter;
-import me.oscar0713.EaseManage.Utilities.TickCalculation;
 import me.oscar0713.EaseManage.Utilities.Utilities;
 import net.md_5.bungee.api.ChatColor;
 

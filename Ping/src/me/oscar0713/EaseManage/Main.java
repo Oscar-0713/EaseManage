@@ -9,9 +9,9 @@ import me.oscar0713.EaseManage.Command.ServerStatus;
 import me.oscar0713.EaseManage.Command.Spawn;
 import me.oscar0713.EaseManage.Command.Stat;
 import me.oscar0713.EaseManage.Runnable.AutoMessage;
+import me.oscar0713.EaseManage.Runnable.TickCalculation;
 import me.oscar0713.EaseManage.TabCompleter.ServerStatusCompleter;
 import me.oscar0713.EaseManage.Utilities.Configuration;
-import me.oscar0713.EaseManage.Utilities.TickCalculation;
 
 public class Main extends JavaPlugin{
 	@Override

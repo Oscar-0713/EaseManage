@@ -1,4 +1,4 @@
-package me.oscar0713.EaseManage.Utilities;
+package me.oscar0713.EaseManage.Runnable;
 
 public class TickCalculation implements Runnable{
 	public static int TICK_COUNT= 0;
