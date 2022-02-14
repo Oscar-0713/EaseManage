@@ -3,6 +3,7 @@ package me.oscar0713.EaseManage;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import me.oscar0713.EaseManage.Command.BackupCommand;
 import me.oscar0713.EaseManage.Command.Playerhead;
 import me.oscar0713.EaseManage.Command.Reload;
 import me.oscar0713.EaseManage.Command.ServerStatus;
@@ -41,6 +42,7 @@ public class Main extends JavaPlugin{
 		this.getCommand("serverstatus").setExecutor(new ServerStatus());
 		this.getCommand("serverstatus").setTabCompleter(new ServerStatusCompleter());
 		this.getCommand("stat").setExecutor(stat);
+		this.getCommand("backup").setExecutor(new BackupCommand());
 		
 		//Event registration
 		Reload reload = new Reload();

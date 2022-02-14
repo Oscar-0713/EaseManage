@@ -1,7 +1,7 @@
 main: me.oscar0713.EaseManage.Main
 name: EaseManage
 description: This plugin is for easy server management for server administrator.
-version: 0.0.7
+version: 0.0.8
 author: Oscar0713
 api-version: 1.13
 commands:
@@ -11,6 +11,7 @@ commands:
   head:
   spawn:
   stat:
+  backup:
 
 permissions:
   easemanage.admin.*:

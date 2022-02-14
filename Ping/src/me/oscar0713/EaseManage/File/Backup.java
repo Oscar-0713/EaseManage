@@ -50,7 +50,7 @@ public class Backup {
 				if (!des_sub.exists()) {
 					des_sub.mkdirs();
 				}
-				copyFolder(file,new File(des_sub.getAbsolutePath() + pathSep +file.getName()));
+				copyFolder(new File(src.getAbsolutePath() + pathSep + file.getName()),des_sub);
 			} else {
 				FileUtil.copy(file, new File(des.getAbsolutePath() + pathSep + file.getName()));
 			}
