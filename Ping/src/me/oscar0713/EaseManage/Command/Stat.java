@@ -103,6 +103,7 @@ public class Stat implements CommandExecutor, Listener {
 		lore.clear();
 		lore.add("");
 		lore.add(ChatColor.GRAY + "" + ChatColor.ITALIC + "The time that you played.");
+		meta.setLore(lore);
 		item.setItemMeta(meta);
 		inv.setItem(31, item);
 		

@@ -14,7 +14,7 @@ public class ZipUtils {
     private List <String> fileList;
     private final String OUTPUT_ZIP_FILE;
     private final String SOURCE_FOLDER; // SourceFolder path
-
+    
     public ZipUtils(String src_folder, String output_file) {
         fileList = new ArrayList < String > ();
         OUTPUT_ZIP_FILE = output_file;
@@ -35,11 +35,11 @@ public class ZipUtils {
             fos = new FileOutputStream(zipFile);
             zos = new ZipOutputStream(fos);
 
-            System.out.println("Output to Zip : " + zipFile);
+            //System.out.println("Output to Zip : " + zipFile);
             FileInputStream in = null;
 
             for (String file: this.fileList) {
-                System.out.println("File Added : " + file);
+                //System.out.println("File Added : " + file);
                 ZipEntry ze = new ZipEntry(source + File.separator + file);
                 zos.putNextEntry(ze);
                 try {
@@ -54,7 +54,7 @@ public class ZipUtils {
             }
 
             zos.closeEntry();
-            System.out.println("Folder successfully compressed");
+            //System.out.println("Folder successfully compressed");
 
         } catch (IOException ex) {
             ex.printStackTrace();

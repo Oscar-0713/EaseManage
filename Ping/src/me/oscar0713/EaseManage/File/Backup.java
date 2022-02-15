@@ -2,6 +2,9 @@ package me.oscar0713.EaseManage.File;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.bukkit.Bukkit;
@@ -11,14 +14,28 @@ import org.bukkit.util.FileUtil;
 public class Backup {
 	private static String pluginPath = Bukkit.getWorldContainer().getPath();
 	//private String prefix;
+	
 	private String pathSep = "/";
+	private String tempFolderName = "easemanage_temp";
+	private String pathToBackup = "EaseManageBackups";
+	
+	private static final SimpleDateFormat df = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
+	private Date date;
+	private Timestamp timestamp;
+	
 	public Backup() {
+		File file = new File(pluginPath + pathSep + pathToBackup);
+		if (!file.exists()) {
+			file.mkdirs();
+		}
+		date = new Date();
+		timestamp = new Timestamp(date.getTime());
 		//this.prefix = prefix;
 	}
 	
 	
 	public boolean backupWorlds() {
-		File des = new File(pluginPath + "/easemanage_temp");
+		File des = new File(pluginPath +pathSep +tempFolderName);
 		if (!des.exists()) {
 			des.mkdirs();
 		}
@@ -37,8 +54,10 @@ public class Backup {
 			}
 		}
 		
-		ZipUtils zip = new ZipUtils(des.getAbsolutePath(),pluginPath + "/backup_test.zip");
+		ZipUtils zip = new ZipUtils(des.getAbsolutePath(),pluginPath + pathSep + pathToBackup +pathSep+ "backup_" + df.format(timestamp) + ".zip");
 		zip.createZip();
+		
+		deleteDirectory(des);
 		return true;
 	}
 	
@@ -55,5 +74,15 @@ public class Backup {
 				FileUtil.copy(file, new File(des.getAbsolutePath() + pathSep + file.getName()));
 			}
 		}
+	}
+	
+	private boolean deleteDirectory(File directory) {
+		File [] allContents = directory.listFiles();
+		if (allContents != null) {
+			for (File file : allContents) {
+				deleteDirectory(file);
+			}			
+		}
+		return directory.delete();
 	}
 }

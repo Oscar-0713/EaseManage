@@ -1,15 +1,39 @@
+##############################
+## EaseManage Configuration ##
+##############################
+
+
+# To indicate whether the command is enable or not
+# Note that this setting is global 
+# (i.e. All players cannot issue that command regardless of their permission)
+# REQUIRED: bool
 command-enable:
   serverstatus: true
   head: true
   spawn: true
   announcement: true
   stat: true
-  
+  backup: true
+# Features setting
+# REQUIRED enable: bool
+# REQUIRED WHEN ENABLE interval: int (seconds)
 features:
   auto-message:
     enable: true
     interval: 180
+# Color code for messages starts at '&', followed by the chat code indicator
+# For more info, check https://www.digminecraft.com/lists/color_list_pc.php
+# Note that we replace all '§' to '&'
+# REQUIRED WHEN ENABLE: String
     msgs:
       - "&bTIPS: Use /spawn can back to your spawnpoint"
       - "&bTIPS: Use /stat can see your own statistics"
       - "&bTIPS: Use /serverstatus can check the current status of the server"
+
+  auto-backup:
+    enable: true
+    interval: 7200
+    # Indicate which world you want to perform backup
+    # If it is blank, EaseManage will backup all active worlds
+    # OPTIONAL: String
+    backup-worlds: []

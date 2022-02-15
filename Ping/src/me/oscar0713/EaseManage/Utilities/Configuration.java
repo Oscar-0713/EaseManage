@@ -2,6 +2,8 @@ package me.oscar0713.EaseManage.Utilities;
 
 import java.util.List;
 
+import javax.annotation.Nonnull;
+
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 
@@ -20,11 +22,13 @@ public class Configuration {
 		}
 		return enable;
 	}
-	public static boolean getAutoMessageEnable() {
-		return config.getBoolean("features.auto-message.enable");
-	}
+	
+//	@Deprecated
+//	public static boolean getAutoMessageEnable() {
+//		return config.getBoolean("features.auto-message.enable");
+//	}
 	public static List<String> getAutoMessageList() {
-		if (!getAutoMessageEnable()) {
+		if (!getFeatureEnable("auto-message")) {
 			return null;
 		}
 		return config.getStringList("features.auto-message.msgs");
@@ -33,4 +37,16 @@ public class Configuration {
 	public static int getAutoMessageInterval() {
 		return config.getInt("features.auto-message.interval");
 	}
+	
+	public static boolean getFeatureEnable(@Nonnull String featureName) {
+		return config.getBoolean("features."+featureName+".enable");
+	}
+	
+	public static int getFeatureInterval(@Nonnull String featureName) {
+		if (config.isInt("features."+featureName +".interval") && getFeatureEnable(featureName)) {
+			return config.getInt("features."+featureName +".interval");
+		}
+		return -1;
+	}
+	
 }
