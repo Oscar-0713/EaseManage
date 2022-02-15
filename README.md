@@ -13,10 +13,10 @@ The plugin includes the following:
 - **Player statistics check with GUI [Completed]**
 - **/spawn with cooldown settings [Completed]**
 - **AutoMessage [Completed]**
-- Custom relaod / restart announcement
+- **Custom relaod / restart announcement [Completed]**
 - Announcement system
 - Display name change
-- Schedule backup
+- **Auto backup / Backup command [Completed]**
 - GUI functions
 - Permission Management
 - And more...
