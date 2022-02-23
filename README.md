@@ -30,8 +30,11 @@ This plugin used the following command name:
 - /serverstatus {TPS/ping} : Check the server status (Permission: easemanage.serverstatus.use)
 - /backup : Backup the worlds in the server folder (Permission: easemanage.backup.use)
 - /head <playerName> : Get a player's head (Permission: easemanage.head.use)
+
 ![](./readMeContent/help.png)
+
 ![](./readMeContent/stat.png)
+
 ![](./readMeContent/serverstatus.png)
 
 ### Features
