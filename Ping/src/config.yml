@@ -62,6 +62,6 @@ features:
     # See the following example
     
       -
-        prefix: "&c[Owner] "
+        prefix: "&c[EaseManage] "
         colorCode: "&d"
         playerNames: ["Oscar0713"]
