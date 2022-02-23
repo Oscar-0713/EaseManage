@@ -1,16 +1,29 @@
 main: me.oscar0713.EaseManage.Main
 name: EaseManage
 description: This plugin is for easy server management for server administrator.
-version: 0.0.10
-author: Oscar0713
-api-version: 1.13
+version: 0.1.0
+author: oscar0713
+website: https://github.com/Oscar-0713/EaseManage
+api-version: 1.18
 commands:
   serverstatus:
+    description: To check the current server status [TPS/Ping]
+    permission: easemanage.serverstatus.use
   reload:
+    description: To reload the whole server
+    permission: easemanage.reload.use
   head:
+    description: To get a player head
+    permission: easemanage.head.use
   spawn:
+    description: To teleport you to your spawnpoint (Bed)
+    permission: easemanage.spawn.use
   stat:
+    description: To check your in-game statistics
+    permission: easemanage.stat.use
   backup:
+    description: To backup the server to the disk
+    permission: easemanage.backup.use
 
 permissions:
   easemanage.admin.*:

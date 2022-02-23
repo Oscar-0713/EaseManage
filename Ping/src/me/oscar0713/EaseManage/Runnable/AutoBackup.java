@@ -4,7 +4,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 
 import me.oscar0713.EaseManage.File.BackupFileHandler;
-import me.oscar0713.EaseManage.Utilities.Configuration;
 
 public class AutoBackup implements Runnable{
 	volatile private boolean shutdown = false;
@@ -14,6 +13,10 @@ public class AutoBackup implements Runnable{
 		if (!shutdown) {
 			Runnable run = new Runnable() {
 				public void run() {
+					if (BackupFileHandler.havingBackup) {
+						Bukkit.broadcastMessage(ChatColor.RED + "[EaseManage] Server auto-backup cannot be initiated because there is a on-going backup procedure.");
+						return;
+					}
 					// TODO Auto-generated method stub
 					Bukkit.broadcastMessage(ChatColor.AQUA + "[EaseManage] Server auto-backup starts, it may lag for a while!");
 					Bukkit.broadcastMessage(ChatColor.RED + "[EaseManage] This function is still in BETA.");
@@ -25,9 +28,7 @@ public class AutoBackup implements Runnable{
 						return;
 					}
 					
-					if (Configuration.getMaxBackups() != -1 && up.getNumberOfFiles() > Configuration.getMaxBackups()) {
-						up.deleteOldestBackup();
-					}
+
 					
 					Bukkit.broadcastMessage(ChatColor.GREEN + "[EaseManage] Backup completed!");
 					return;

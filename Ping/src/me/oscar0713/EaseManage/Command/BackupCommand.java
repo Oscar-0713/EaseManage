@@ -29,6 +29,10 @@ public class BackupCommand implements CommandExecutor{
 					
 					public void run() {
 						// TODO Auto-generated method stub
+						if (BackupFileHandler.havingBackup) {
+							sender.sendMessage(ChatColor.RED + "[EaseManage] There is a undergoing backup procedure, please wait until that procedure is done.");
+							return;
+						}
 						Bukkit.broadcastMessage(ChatColor.AQUA + "[EaseManage] Server administrator initiates a backup, it may lag for a while!");
 						BackupFileHandler up = new BackupFileHandler();
 						//BackupFileHandler.saveWorld();

@@ -14,6 +14,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.util.FileUtil;
 
+import me.oscar0713.EaseManage.Utilities.Configuration;
+
 public class BackupFileHandler {
 	private static String pluginPath = Bukkit.getWorldContainer().getPath();
 	//private String prefix;
@@ -21,7 +23,7 @@ public class BackupFileHandler {
 	private String pathSep = "/";
 	private String tempFolderName = "easemanage_temp";
 	private String pathToBackup = "EaseManageBackups";
-	
+	public static boolean havingBackup = false;
 	private static final SimpleDateFormat df = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
 	private Date date;
 	private Timestamp timestamp;
@@ -38,6 +40,7 @@ public class BackupFileHandler {
 	
 	
 	public boolean backupWorlds() {
+		havingBackup = true;
 		File des = new File(pluginPath +pathSep +tempFolderName);
 		if (!des.exists()) {
 			des.mkdirs();
@@ -53,6 +56,7 @@ public class BackupFileHandler {
 				copyFolder(src,des_world);
 			} catch (Exception e) {
 				e.printStackTrace();
+				havingBackup = false;
 				return false;
 			}
 		}
@@ -61,6 +65,12 @@ public class BackupFileHandler {
 		zip.createZip();
 		
 		deleteDirectory(des);
+		
+		if (Configuration.getMaxBackups() != -1 && this.getNumberOfFiles() > Configuration.getMaxBackups()) {
+			this.deleteOldestBackup();
+		}
+		
+		havingBackup = false;
 		return true;
 	}
 	
