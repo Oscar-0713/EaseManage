@@ -1,5 +1,7 @@
 ##############################
+##                          ##
 ## EaseManage Configuration ##
+##                          ##
 ##############################
 
 
@@ -7,6 +9,7 @@
 # Note that this setting is global 
 # (i.e. All players cannot issue that command regardless of their permission)
 # REQUIRED: bool
+
 command-enable:
   serverstatus: true
   head: true
@@ -14,13 +17,16 @@ command-enable:
   announcement: true
   stat: true
   backup: true
-# Features setting
+  
+# Feature settings
 # REQUIRED enable: bool
 # REQUIRED WHEN ENABLE interval: int (seconds)
+
 features:
   auto-message:
     enable: true
     interval: 180
+    
 # Color code for messages starts at '&', followed by the chat code indicator
 # For more info, check https://www.digminecraft.com/lists/color_list_pc.php
 # Note that we replace all '§' to '&'
@@ -33,7 +39,29 @@ features:
   auto-backup:
     enable: true
     interval: 7200
-    # Indicate which world you want to perform backup
+    
+    # Max number of backups that you want to save in your disk
+    # If the maximum number is reached, then EaseNabage will remove the 
+    # oldest backup in your disk (Oldest creation date)
+    # indicate -1 if you don't want to delete any backup
+    # REQUIRED WHEN ENABLE: int
+    max-backups: 10
+    
+    # Indicate which world(s) you want to perform backup
     # If it is blank, EaseManage will backup all active worlds
     # OPTIONAL: String
-    backup-worlds: []
+    
+    #To be added as function
+    #backup-worlds: []
+    
+  display-name:
+    enable: true
+    group:
+    # List of an object
+    # REQUIRED WHEN ENABLE
+    # See the following example
+    
+      -
+        prefix: "&c[Owner] "
+        colorCode: "&d"
+        playerNames: ["Oscar0713"]

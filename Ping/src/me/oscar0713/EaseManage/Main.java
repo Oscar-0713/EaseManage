@@ -9,6 +9,7 @@ import me.oscar0713.EaseManage.Command.Reload;
 import me.oscar0713.EaseManage.Command.ServerStatus;
 import me.oscar0713.EaseManage.Command.Spawn;
 import me.oscar0713.EaseManage.Command.Stat;
+import me.oscar0713.EaseManage.Event.DisplayName;
 import me.oscar0713.EaseManage.Runnable.AutoBackup;
 import me.oscar0713.EaseManage.Runnable.AutoMessage;
 import me.oscar0713.EaseManage.Runnable.TickCalculation;
@@ -36,9 +37,11 @@ public class Main extends JavaPlugin{
 			Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new AutoMessage(), 60*20, Configuration.getFeatureInterval("auto-message")*20);			
 		}
 		if (Configuration.getFeatureEnable("auto-backup")) {
-			Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new AutoBackup(), 60*20, Configuration.getFeatureInterval("auto-backup")*20);
+			Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new AutoBackup(), Configuration.getFeatureInterval("auto-backup")*20, Configuration.getFeatureInterval("auto-backup")*20);
 		}
-		
+		if (Configuration.getFeatureEnable("display-name")) {
+			this.getServer().getPluginManager().registerEvents(new DisplayName(), this);
+		}
 		//Deprecated command
 		//this.getCommand("ping").setExecutor(new Ping(this));
 		

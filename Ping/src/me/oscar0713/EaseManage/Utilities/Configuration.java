@@ -1,6 +1,7 @@
 package me.oscar0713.EaseManage.Utilities;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Nonnull;
 
@@ -49,4 +50,7 @@ public class Configuration {
 		return -1;
 	}
 	
-}
+	public static List<Map<?,?>> getDisplayNameList() {
+		return config.getMapList("features.display-name.group");
+	}
+	}

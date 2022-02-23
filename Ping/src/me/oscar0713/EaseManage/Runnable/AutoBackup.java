@@ -17,6 +17,7 @@ public class AutoBackup implements Runnable{
 					Bukkit.broadcastMessage(ChatColor.AQUA + "[EaseManage] Server auto-backup starts, it may lag for a while!");
 					Bukkit.broadcastMessage(ChatColor.RED + "[EaseManage] This function is still in BETA.");
 					Backup up = new Backup();
+					Backup.saveWorld();
 					boolean done = up.backupWorlds();
 					if (!done) {
 						Bukkit.broadcastMessage(ChatColor.RED + "[EaseManage] Backup failed, please check error for more details.");

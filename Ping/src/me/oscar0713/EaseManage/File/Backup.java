@@ -85,4 +85,11 @@ public class Backup {
 		}
 		return directory.delete();
 	}
+	
+	public static void saveWorld() {
+		Bukkit.savePlayers();
+		for (World world : Bukkit.getWorlds()) {
+			world.save();
+		}
+	}
 }

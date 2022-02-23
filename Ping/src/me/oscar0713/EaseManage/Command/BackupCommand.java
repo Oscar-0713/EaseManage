@@ -30,6 +30,7 @@ public class BackupCommand implements CommandExecutor{
 						// TODO Auto-generated method stub
 						Bukkit.broadcastMessage(ChatColor.AQUA + "[EaseManage] Server administrator initiates a backup, it may lag for a while!");
 						Backup up = new Backup();
+						Backup.saveWorld();
 						boolean done = up.backupWorlds();
 						if (!done) {
 							Bukkit.broadcastMessage(ChatColor.RED + "[EaseManage] Backup failed!");
