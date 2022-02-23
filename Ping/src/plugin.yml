@@ -6,7 +6,6 @@ author: Oscar0713
 api-version: 1.13
 commands:
   serverstatus:
-  announce:
   reload:
   head:
   spawn:

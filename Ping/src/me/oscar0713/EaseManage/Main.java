@@ -36,12 +36,12 @@ public class Main extends JavaPlugin{
 		if (Configuration.getFeatureEnable("auto-message")) {
 			Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new AutoMessage(), 60*20, Configuration.getFeatureInterval("auto-message")*20);			
 		}
+		
 		if (Configuration.getFeatureEnable("auto-backup")) {
 			Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new AutoBackup(), Configuration.getFeatureInterval("auto-backup")*20, Configuration.getFeatureInterval("auto-backup")*20);
 		}
-		if (Configuration.getFeatureEnable("display-name")) {
-			this.getServer().getPluginManager().registerEvents(new DisplayName(), this);
-		}
+		
+
 		//Deprecated command
 		//this.getCommand("ping").setExecutor(new Ping(this));
 		
@@ -58,6 +58,9 @@ public class Main extends JavaPlugin{
 		this.getServer().getPluginManager().registerEvents(reload, this);
 		this.getServer().getPluginManager().registerEvents(stat, this);
 		
+		if (Configuration.getFeatureEnable("display-name")) {
+			this.getServer().getPluginManager().registerEvents(new DisplayName(), this);
+		}
 		//Deprecated method
 		//this.getServer().getPluginManager().registerEvents(new TPS(),this);
 		

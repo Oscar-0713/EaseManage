@@ -7,7 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 import me.oscar0713.EaseManage.Main;
-import me.oscar0713.EaseManage.File.Backup;
+import me.oscar0713.EaseManage.File.BackupFileHandler;
 import me.oscar0713.EaseManage.Utilities.Configuration;
 
 public class BackupCommand implements CommandExecutor{
@@ -21,6 +21,7 @@ public class BackupCommand implements CommandExecutor{
 		if (label.equalsIgnoreCase("backup")) {
 			if (!Configuration.getCommandEnable("backup")) {
 				sender.sendMessage(ChatColor.RED + "This command is currently disabled!");
+				return false;
 			}
 			
 			if (sender.hasPermission("easemanage.backup.use")) {
@@ -29,8 +30,8 @@ public class BackupCommand implements CommandExecutor{
 					public void run() {
 						// TODO Auto-generated method stub
 						Bukkit.broadcastMessage(ChatColor.AQUA + "[EaseManage] Server administrator initiates a backup, it may lag for a while!");
-						Backup up = new Backup();
-						Backup.saveWorld();
+						BackupFileHandler up = new BackupFileHandler();
+						//BackupFileHandler.saveWorld();
 						boolean done = up.backupWorlds();
 						if (!done) {
 							Bukkit.broadcastMessage(ChatColor.RED + "[EaseManage] Backup failed!");

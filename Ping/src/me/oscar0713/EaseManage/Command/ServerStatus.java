@@ -16,7 +16,7 @@ public class ServerStatus implements CommandExecutor{
 		if (label.equalsIgnoreCase("serverstatus")) {
 			if (!(sender instanceof Player)) {
 				sender.sendMessage(ChatColor.RED + "You are not allowed to use this command!");
-				return true;
+				return false;
 			}
 			Player player = (Player) sender;
 			

@@ -35,9 +35,6 @@ public class Configuration {
 		return config.getStringList("features.auto-message.msgs");
 	}
 	
-	public static int getAutoMessageInterval() {
-		return config.getInt("features.auto-message.interval");
-	}
 	
 	public static boolean getFeatureEnable(@Nonnull String featureName) {
 		return config.getBoolean("features."+featureName+".enable");
@@ -53,4 +50,8 @@ public class Configuration {
 	public static List<Map<?,?>> getDisplayNameList() {
 		return config.getMapList("features.display-name.group");
 	}
+	
+	public static int getMaxBackups() {
+		return config.getInt("features.auto-backup.max-backups");
 	}
+}
