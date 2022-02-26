@@ -46,7 +46,7 @@ public class DisplayName implements Listener{
 		Player player = event.getPlayer();
 		int index = getPlayerIndex(player.getName());
 		
-		if (index!= 1) {
+		if (index!= -1) {
 			event.setJoinMessage(ChatColor.YELLOW.toString() + player.getName() + " joined the game");
 			player.setDisplayName(group.get(index).getPlayerDisplayName(player.getName()));
 			player.setPlayerListName(group.get(index).getPlayerDisplayName(player.getName()));

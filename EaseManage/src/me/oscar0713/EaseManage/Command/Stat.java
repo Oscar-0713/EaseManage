@@ -44,7 +44,7 @@ public class Stat implements CommandExecutor, Listener {
 			if (!player.hasPermission("easemanage.stat.use")) {
 				player.sendMessage(ChatColor.RED + "You do not have permission to issue this comnand!");
 				return true;
-			}
+			}			
 			updateInv(player);
 			player.openInventory(invs.get(player.getName()));
 			return true;
