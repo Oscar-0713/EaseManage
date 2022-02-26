@@ -1,5 +1,6 @@
 package me.oscar0713.EaseManage.Command;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -40,6 +41,10 @@ public class Spawn implements CommandExecutor{
 			}
 			
 			Location loc = player.getBedSpawnLocation();
+			if (loc == null) {
+				loc = Bukkit.getServer().getWorld("world").getSpawnLocation();
+			}
+			
 			player.teleport(loc);
 			cooldowns.setCooldown(player.getName());
 			player.sendMessage(ChatColor.GOLD + "You have been sent to your spawn point!");
