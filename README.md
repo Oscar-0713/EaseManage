@@ -84,11 +84,11 @@ command-enable:
 The settings are located at `features.auto-message` in `config.yml`
 ```yaml
   auto-message:
-   # Indicate whether thhe auto-message feature will be enabled or not
-   # REQUIRED : boolean
+    # Indicate whether thhe auto-message feature will be enabled or not
+    # REQUIRED : boolean
     enable: true
-	#Indicate the interval of each auto-message (seconds)
-	# REQUIRED : int 
+    #Indicate the interval of each auto-message (seconds)
+    # REQUIRED : int 
     interval: 180 
     
 # Color code for messages starts at '&', followed by the chat code indicator
@@ -106,18 +106,18 @@ msgs:
       - "&bTIPS: Use /spawn can back to your spawnpoint"
       - "&bTIPS: Use /stat can see your own statistics"
       - "&bTIPS: Use /serverstatus can check the current status of the server"
-	  - "EaseManage is a good plugin!"
+      - "EaseManage is a good plugin!"
 ```
 
 #### AutoBackup
 The settings are located at `features.auto-backup` in `config.yml`
 ```yaml
 auto-backup:
-	# Indicate whether the auto-backup function enables or not
-	# REQUIRED : int
+    # Indicate whether the auto-backup function enables or not
+    # REQUIRED : int
     enable: true
-	# Indicates the interval of each backup in seconds
-	# REQUIRED WHEN ENABLE : int
+    # Indicates the interval of each backup in seconds
+    # REQUIRED WHEN ENABLE : int
     interval: 7200
     
     # Max number of backups that you want to save in your disk
