@@ -15,6 +15,7 @@ import me.oscar0713.EaseManage.Runnable.AutoMessage;
 import me.oscar0713.EaseManage.Runnable.TickCalculation;
 import me.oscar0713.EaseManage.TabCompleter.ServerStatusCompleter;
 import me.oscar0713.EaseManage.Utilities.Configuration;
+import me.oscar0713.EaseManage.Utilities.PluginDesc;
 
 public class Main extends JavaPlugin{
 	@Override
@@ -26,7 +27,7 @@ public class Main extends JavaPlugin{
 		
 		//Configuration class setup
 		new Configuration(this);
-		
+		new PluginDesc(this);
 		//Stat command class
 		Stat stat = new Stat();
 		
