@@ -1,6 +1,6 @@
 package me.oscar0713.EaseManage.File;
 
-import java.io.InputStream;
+import java.io.File;
 
 import org.bukkit.inventory.ItemStack;
 
@@ -9,20 +9,23 @@ import me.oscar0713.EaseManage.GUI.GUIinfo;
 public class GUIFileHandler {
 	//Use yml to handle the settings of a GUI inventory
 	private String name;
-	private InputStream file;
+	private File file;
 	
 	//Require relative path from the root of jar file
 	public GUIFileHandler(String path) {
-		file = this.getClass().getResourceAsStream(path);
+		String relativeRoot = new File("").getAbsolutePath();
+		file = new File(path);
 	}
 	
 	//TODO: return GUIinfo object for constructing GUI object directly
 	public GUIinfo getInfo(String section) {
+		
 		return null;
 	}
 	
 	//Return the ItemStack array for constructing GUIinfo
 	private ItemStack[] getItems(String section) {
+		
 		return null;
 	}
 	

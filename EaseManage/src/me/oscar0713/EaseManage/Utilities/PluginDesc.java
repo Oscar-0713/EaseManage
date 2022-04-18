@@ -5,7 +5,7 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import me.oscar0713.EaseManage.Main;
 
 public class PluginDesc {
-	private PluginDescriptionFile desc;
+	private static PluginDescriptionFile desc;
 	public PluginDesc(Main plugin) {
 		desc = plugin.getDescription();
 	}
